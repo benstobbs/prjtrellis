@@ -8,12 +8,17 @@ jobs:
     steps:  
       - uses: actions/checkout@v2
 
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Install boost
+        uses: MarkusJx/install-boost@v2.1.0
+        with:
+          boost_version: 1.77.0
+
       - name: Make VS Project
         working-directory: libtrellis
         run: cmake .
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
 
       - name: Build
         working-directory: libtrellis
