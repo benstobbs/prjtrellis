@@ -17,7 +17,6 @@ jobs:
         with:
           boost_version: 1.77.0
           platform_version: 2019
-          toolset: msvc
 
       - name: Make VS Project
         working-directory: libtrellis
